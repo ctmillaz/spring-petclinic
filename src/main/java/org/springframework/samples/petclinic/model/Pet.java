@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2013 the original author or authors.
+ * Copyright 2002-2018 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,34 +15,37 @@
  */
 package org.springframework.samples.petclinic.model;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+
+import java.time.LocalDate;
+
+public class Pet {
+
+    private PetType type;
+    private Owner owner;
+    private LocalDate birthDate;
 
 
-/**
- * Simple JavaBean domain object adds a name property to <code>BaseEntity</code>. Used as a base class for objects
- * needing these properties.
- *
- * @author Ken Krebs
- * @author Juergen Hoeller
- */
-@MappedSuperclass
-public class NamedEntity extends BaseEntity {
-
-    @Column(name = "name")
-    private String name;
-
-    public String getName() {
-        return this.name;
+    public PetType getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(PetType type) {
+        this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return this.getName();
+    public Owner getOwner() {
+        return owner;
     }
 
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
 }

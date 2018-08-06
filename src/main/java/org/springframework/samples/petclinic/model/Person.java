@@ -25,14 +25,10 @@ import javax.validation.constraints.NotEmpty;
  * @author Ken Krebs
  */
 @MappedSuperclass
-public class Person extends BaseEntity {
+public class Person {
 
-    @Column(name = "first_name")
-    @NotEmpty
     private String firstName;
 
-    @Column(name = "last_name")
-    @NotEmpty
     private String lastName;
 
     public String getFirstName() {
